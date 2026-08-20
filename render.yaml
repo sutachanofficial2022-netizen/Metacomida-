@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: metacomida
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python metacomida_server.py
+    healthCheckPath: /health
+    envVars:
+      - key: PRESENTER_PIN
+        sync: false
